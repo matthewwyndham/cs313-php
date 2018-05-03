@@ -8,13 +8,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item <?php if($_SERVER["PHP_SELF"]==home.php){echo "active"} ?>">
+            <?php if($_SERVER["PHP_SELF"]==home.php){echo '<li class="nav-item active">'} else {echo '<li class="nav-item">'} ?>
               <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item <?php if($_SERVER["PHP_SELF"]==about-us.php){echo "active"} ?>">
+               <?php if($_SERVER["PHP_SELF"]==about-us.php){echo '<li class="nav-item active">'} else {echo '<li class="nav-item">'} ?>
+            <li class="nav-item">
               <a class="nav-link" href="about-us.php">About Us</a>
             </li>
-              <li class="nav-item <?php if($_SERVER["PHP_SELF"]==login.php){echo "active"} ?>">
+              <?php if($_SERVER["PHP_SELF"]==login.php){echo '<li class="nav-item active">'} else {echo '<li class="nav-item">'} ?>
+              <li class="nav-item">
               <a class="nav-link" href="login.php">Login</a>
             </li>
           </ul>
