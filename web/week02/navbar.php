@@ -11,22 +11,11 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  About Me
-              </a>
-              <div class="dropdown-menu p-4 text-muted">
-                  <?php
-                    $string = file_get_contents("text.json");
-                    $json = json_decode($string, true);
-                  
-                    echo '<p>' . $json['AboutMeFirst']['text'] . '</p>';
-                    echo '<p>' . $json['AboutMeSecond']['text'] . '</p>';
-                   ?>
-              </div>
-              </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Assignments</a>
+              <a class="nav-link" href="#">Assignments</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
             </li>
           </ul>
         </div>
