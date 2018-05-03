@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!doctype html>
 <html>
 <head>
@@ -12,7 +14,11 @@
     <header><?php include 'navbar.php'?></header>
     
 	<main>
-        <p>Welcome. You are not logged in.</p>
+        
+        <p>Welcome. 
+            <?php if(isset($_SESSION['user'])) {echo $_SESSION['user'];} else {echo 'You are not logged in';} ?>
+            .
+        </p>
     </main>
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

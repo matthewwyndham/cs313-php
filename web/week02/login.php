@@ -12,8 +12,8 @@
     <header><?php include 'navbar.php'?></header>
     
 	<main>
-        <a src="#">Log in as Administrator</a>
-        <a src="#">Log in as Tester</a>
+        <p><a src="#">Log in as Administrator</a></p>
+        <p><a src="#">Log in as Tester</a></p>
     </main>
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
