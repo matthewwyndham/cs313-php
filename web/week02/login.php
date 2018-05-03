@@ -12,8 +12,8 @@
     <header><?php include 'navbar.php'?></header>
     
 	<main>
-        <p><a href="home.php" onclick="<?php $_SESSION['user'] = 'Administrator' ?>">Log in as Administrator</a></p>
-        <p><a href="home.php" onclick="<?php $_SESSION['user'] = 'Tester' ?>">Log in as Tester</a></p>
+        <p><a href="adminlogin.php">Log in as Administrator</a></p>
+        <p><a href="testerlogin.php">Log in as Tester</a></p>
     </main>
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
