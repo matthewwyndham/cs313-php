@@ -1,4 +1,4 @@
 <?php 
 $_SESSION['user'] = 'Tester';
-include 'home.php';
+header("Location: /week02/home.php");
 ?>
