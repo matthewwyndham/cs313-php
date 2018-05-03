@@ -12,10 +12,11 @@
     <header><?php include 'navbar.php'?></header>
     
 	<main>
-        <h1>Freddy's Frozen Tacos</h1>
         <p>Welcome. You are not logged in.</p>
     </main>
     
     <script type="text/javascript"  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script>
+    </script>
 </body>
 </html>
