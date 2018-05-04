@@ -1,13 +1,26 @@
+body {
+    background-color: #333;
+}
+
 p {
-    font-size: 20px;
-    background-color: mediumslateblue;
-    color: dimgrey;
+    color: #877;
 }
 
 a {
-    color: darkred;
+    color: #c57;
 }
 
 a:visited {
-    color: purple;
+    color: #fb1;
 }
+
+/* 
+Spacemacs dark colors:
+#333 - background
+#877 - text
+#c57 - red text
+#658 - purple bar
+#376 - green text
+#48b - blue text
+#fb1 - gold
+*/
