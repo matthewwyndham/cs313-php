@@ -12,7 +12,7 @@
     <div class="jumbotron">
         <h1 class="display-3">About Me</h1>
         <h2 class="display-4">Matt Wyndham</h2>
-        <img class="rounded float-right" width="100px" src="numberone.jpg"/>
+        <img class="rounded float-right" width="100px" src="numberone.jpg" onclick="window.open('https://www.youtube.com/watch?v=PfYnvDL0Qcw');"/>
     </div>
     <div class="alert alert-dark" role="alert">I'm from Washington and I served my mission in Japan. I love science fiction, video games, algorithms, space, and soda. My favorite animal is the noble, majestic fox. I aspire to be like unto the fox, shrewd and quick. A predator in it's sphere. I also enjoy poetry and cinema, I feel they are the same (when it's good cinema). I also am a fan of programming, but we all are, aren't we?</div>
     
