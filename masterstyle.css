@@ -1,0 +1,12 @@
+body {
+    background-color: mediumslateblue;
+    color: dimgrey;
+}
+
+a {
+    color: darkred;
+}
+
+a:visited {
+    color: purple;
+}
