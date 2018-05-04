@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="masterstyle.css" />
+    <link rel="stylesheet" type="text/css" href="skeleton.css" />
     
 </head>
 <body>
