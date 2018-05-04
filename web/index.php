@@ -9,10 +9,11 @@
     
 </head>
 <body>
-
-    <h1>About Me</h1>
-    <h2>Matt Wyndham</h2>
-    <img src="numberone.jpg"/>
+    <div class="jumbotron">
+        <h1 class="display-4">About Me</h1>
+        <h2 class="lead">Matt Wyndham</h2>
+        <img class="rounded " src="numberone.jpg"/>
+    </div>
     <div class="alert alert-dark" role="alert">I'm from Washington and I served my mission in Japan. I love science fiction, video games, algorithms, space, and soda. My favorite animal is the noble, majestic fox. I aspire to be like unto the fox, shrewd and quick. A predator in it's sphere. I also enjoy poetry and cinema, I feel they are the same (when it's good cinema). I also am a fan of programming, but we all are, aren't we?</div>
     
     <h1>The Index</h1>
