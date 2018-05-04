@@ -16,7 +16,9 @@
     </div>
     <div class="alert alert-dark" role="alert">I'm from Washington and I served my mission in Japan. I love science fiction, video games, algorithms, space, and soda. My favorite animal is the noble, majestic fox. I aspire to be like unto the fox, shrewd and quick. A predator in it's sphere. I also enjoy poetry and cinema, I feel they are the same (when it's good cinema). I also am a fan of programming, but we all are, aren't we?</div>
     
+    <div width="100%" onmouseover="changeBColor('indexTitle')" id="indexTitle">
     <h1>The Index</h1>
+    </div>
     
     <table class="table table-striped table-dark">
         <thead>
