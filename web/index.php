@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="jumbotron">
-        <h1 class="display-4">About Me</h1>
+        <h1 class="display-3">About Me</h1>
         <h2 class="display-4">Matt Wyndham</h2>
         <img class="rounded float-right" width="100px" src="numberone.jpg"/>
     </div>
