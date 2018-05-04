@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Welcome to Matt's Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     
 </head>
@@ -13,77 +17,77 @@
     
     <h1>The Index</h1>
     <div class="container">
-        <div class="row">
-            <h2 class="five">Week 02</h2>
-            <p class="seven"><a href="week02/week02.php">week02.php prep</a></p>
-            <p class="seven"><a href="week02/home.php">week02 team assignment</a></p>
-        </div><div class="row">
-            <h2 class="five">Week 03</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div><div class="row">
-            <h2 class="five">Week 04</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div><div class="row">
-            <h2 class="five">Week 05</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div><div class="row">
-            <h2 class="five">Week 06</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div><div class="row">
-            <h2 class="five">Week 07</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div><div class="row">
-            <h2 class="five">Week 08</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div>
-        <div class="row">
-            <h2 class="five">Week 09</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div>
-        <div class="row">
-            <h2 class="five">Week 10</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div>
-        <div class="row">
-            <h2 class="five">Week 11</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div>
-        <div class="row">
-            <h2 class="five">Week 12</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div>
-        <div class="row">
-            <h2 class="five">Week 13</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div>
-        <div class="row">
-            <h2 class="five">Week 14</h2>
-            <p class="seven"><a href="comingsoon.html">Team Activity</a></p>
-            <p class="seven"><a href="comingsoon.html">Assignment</a></p>
-            <p class="seven"><a href="comingsoon.html">Project</a></p>
-        </div>
+        
+            <h2>Week 02</h2>
+            <p><a href="week02/week02.php">week02.php prep</a></p>
+            <p><a href="week02/home.php">week02 team assignment</a></p>
+        
+            <h2>Week 03</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+            <h2>Week 04</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+            <h2>Week 05</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+            <h2>Week 06</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+            <h2>Week 07</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+            <h2>Week 08</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+        
+            <h2>Week 09</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+        
+            <h2>Week 10</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+        
+            <h2>Week 11</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+        
+            <h2>Week 12</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+        
+            <h2>Week 13</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
+        
+            <h2>Week 14</h2>
+            <p><a href="comingsoon.html">Team Activity</a></p>
+            <p><a href="comingsoon.html">Assignment</a></p>
+            <p><a href="comingsoon.html">Project</a></p>
+        
     </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
