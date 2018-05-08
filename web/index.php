@@ -40,7 +40,7 @@
             </tr>
             <tr>   
                 <th scope="row">03</th>
-                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="week03/team.php">Team Activity</a></td>
                 <td><a href="comingsoon.html">Assignment</a></td>
                 <td><a href="comingsoon.html">Project</a></td>
             </tr>
