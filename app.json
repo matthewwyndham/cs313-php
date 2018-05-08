@@ -1,3 +1,6 @@
 {
-  "name": "CS 313 PHP Base Code"
+    "name": "CS 313 PHP Base Code",
+    "description": "A warehouse of experimentation and fun in backend development",
+    "repository": "https://github.com/matthewwyndham/cs313-php",
+    "logo": "icon.png"
 }
