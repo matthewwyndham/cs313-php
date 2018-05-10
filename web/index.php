@@ -40,9 +40,9 @@
             </tr>
             <tr>   
                 <th scope="row">03</th>
-                <td><a href="week03/team.php">Team Activity</a></td>
-                <td><a href="week03/page_count.php">Assignment</a></td>
-                <td><a href="comingsoon.html">Project</a></td>
+                <td><a href="week03/team.php">POST: Mailmen</a></td>
+                <td><a href="week03/page_count.php">Increment on Page Load</a></td>
+                <td><a href="week03/store.php">Dirt Co.</a></td>
             </tr>
             <tr>   
                 <th scope="row">04</th>
