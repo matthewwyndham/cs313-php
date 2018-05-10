@@ -1,16 +1,16 @@
-<?php session_start(); ?>
+<?php session_start(); $c = "count"; ?>
 <!DOCTYPE html>
 <html>
     <body>   
         <h1>Page Counter</h1>
         <p>You have loaded this page: <?php 
-            if (isset($_SESSION["count"])) {
-                $_SESSION["count"] = $_SESSION["count"] + 1;
-                echo $_SESSION["count"];
+            if (isset($_SESSION[$c])) {
+                $_SESSION[$c] = $_SESSION[$c] + 1;
+                echo $_SESSION[$c];
             }
             else {
-                $_SESSION["count"] = 1;
-                echo $_SESSION["count"];
+                $_SESSION[$c] = 1;
+                echo $_SESSION[$c];
             }
             ?> times!</p>
     </body>
