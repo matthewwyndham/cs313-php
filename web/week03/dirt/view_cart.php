@@ -12,7 +12,7 @@
     if(isset($_SESSION["cart"])) {
         $count = 0;
         foreach ($_SESSION["cart"] as $block) { 
-            echo "<p>$block<a href=\"#\" class=\"btn btn-primary\" onclick=\"remove($count)\">Remove</a></p>";
+            echo "<p class=\"alert dark-alert\">$block<a href=\"#\" class=\"btn btn-primary\" onclick=\"remove($count)\">Remove</a></p>";
             $count += 1;
         } 
     } else { $_SESSION["cart"] = [];} 
