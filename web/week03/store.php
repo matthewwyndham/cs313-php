@@ -3,15 +3,7 @@
     if(isset($_SESSION["cart"])) {
         
     } else {
-        $_SESSION["cart"] = [
-            'clay'=>'0',
-            'diorite'=>'0',
-            'grass'=>'0',
-            'obsidian'=>'0',
-            'quartz'=>'0',
-            'sand'=>'0',
-            'price'=>'0'
-        ];
+        $_SESSION["cart"] = [];
     }
 ?>
 <!DOCTYPE html>
@@ -78,7 +70,6 @@
                 </div>
             <form id="addToCart" action="dirt/add_to_cart.php" method="get">
                 <input id="blockType" type="hidden" name="block" value="" />
-                <input id="quantity" type="hidden" name="quantity" value="" />
             </form>
             
         </main>
