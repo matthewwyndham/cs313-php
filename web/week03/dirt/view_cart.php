@@ -1,6 +1,8 @@
 <?php session_start(); 
     if(isset($_SESSION["cart"])) {
-        
+        foreach ($_SESSION["cart"] as $block) {
+            echo "<p>$block : $_SESSION['cart'][$block]</p>"
+        }
     } else {
         $_SESSION["cart"] = [
             'clay'=>'0',
