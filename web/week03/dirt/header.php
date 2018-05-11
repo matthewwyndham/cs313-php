@@ -9,7 +9,7 @@
         <a class="nav-link" href="/week03/store.php">Browse</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="view_cart.php">View Cart</a>
+        <a class="nav-link" href="/week03/dirt/view_cart.php">View Cart</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/comingsoon.html">Affiliates</a>

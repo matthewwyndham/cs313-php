@@ -1,4 +1,5 @@
 function add(block, amount) {
-    
-    // add_to_cart.php
+    document.getElementById('blockType').attribute.value = block;
+    document.getElementById('quantity').attribute.value = amount;
+    document.getElementById('addToCart').submit();    
 }

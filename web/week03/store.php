@@ -3,7 +3,15 @@
     if(isset($_SESSION["cart"])) {
         
     } else {
-        $_SESSION["cart"] = [];
+        $_SESSION["cart"] = [
+            'clay'=>'0',
+            'diorite'=>'0',
+            'grass'=>'0',
+            'obsidian'=>'0',
+            'quartz'=>'0',
+            'sand'=>'0',
+            'price'=>'0'
+        ];
     }
 ?>
 <!DOCTYPE html>
@@ -14,61 +22,65 @@
     <body>
         <?php require 'dirt/header.php' ?>
         <main>
-            <input type="hidden" name="item" value="" />
             <div class="jumbotron">
                 <h1>Dirt Co.</h1>
                 <p>We provide for all your standard Minecraft block needs!</p>
             </div>
             <div class="container">
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th>Block</th>
-                        <th>Image</th>
-                        <th>Cost</th>
-                        <th>Purchase</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Clay</td>
-                        <td><img src="dirt/img/clay.png" class="rounded" alt="clay"></td>
-                        <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
-                        <td><a href="#" class="btn btn-primary" onclick="add('clay', 64)">Add to Cart</a></td>
-                    </tr>
-                    <tr>
-                        <td>Diorite</td>
-                        <td><img src="dirt/img/diorite.png" class="rounded" alt="diorite"></td>
-                        <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
-                        <td><a href="#" class="btn btn-primary" onclick="add('diorite', 64)">Add to Cart</a></td>
-                    </tr>
-                    <tr>
-                        <td>Grass</td>
-                        <td><img src="dirt/img/grass.png" class="rounded" alt="grass"></td>
-                        <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
-                        <td><a href="#" class="btn btn-primary" onclick="add('grass', 64)">Add to Cart</a></td>
-                    </tr>
-                    <tr>
-                        <td>Obsidian</td>
-                        <td><img src="dirt/img/obsidian.png" class="rounded" alt="obsidian"></td>
-                        <td>8 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
-                        <td><a href="#" class="btn btn-primary" onclick="add('obsidian', 8)">Add to Cart</a></td>
-                    </tr>
-                    <tr>
-                        <td>Quartz</td>
-                        <td><img src="dirt/img/quartz.png" class="rounded" alt="quartz"></td>
-                        <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
-                        <td><a href="#" class="btn btn-primary" onclick="add('quartz', 64)">Add to Cart</a></td>
-                    </tr>
-                    <tr>
-                        <td>Sand</td>
-                        <td><img src="dirt/img/sand.png" class="rounded" alt="sand"></td>
-                        <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
-                        <td><a href="#" class="btn btn-primary" onclick="add('sand', 64)">Add to Cart</a></td>
-                    </tr>
-                </tbody>
-            </table>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Block</th>
+                            <th>Image</th>
+                            <th>Cost</th>
+                            <th>Purchase</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Clay</td>
+                            <td><img src="dirt/img/clay.png" class="rounded" alt="clay"></td>
+                            <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
+                            <td><a href="#" class="btn btn-primary" onclick="add('clay', 64)">Add to Cart</a></td>
+                        </tr>
+                        <tr>
+                            <td>Diorite</td>
+                            <td><img src="dirt/img/diorite.png" class="rounded" alt="diorite"></td>
+                            <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
+                            <td><a href="#" class="btn btn-primary" onclick="add('diorite', 64)">Add to Cart</a></td>
+                        </tr>
+                        <tr>
+                            <td>Grass</td>
+                            <td><img src="dirt/img/grass.png" class="rounded" alt="grass"></td>
+                            <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
+                            <td><a href="#" class="btn btn-primary" onclick="add('grass', 64)">Add to Cart</a></td>
+                        </tr>
+                        <tr>
+                            <td>Obsidian</td>
+                            <td><img src="dirt/img/obsidian.png" class="rounded" alt="obsidian"></td>
+                            <td>8 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
+                            <td><a href="#" class="btn btn-primary" onclick="add('obsidian', 8)">Add to Cart</a></td>
+                        </tr>
+                        <tr>
+                            <td>Quartz</td>
+                            <td><img src="dirt/img/quartz.png" class="rounded" alt="quartz"></td>
+                            <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
+                            <td><a href="#" class="btn btn-primary" onclick="add('quartz', 64)">Add to Cart</a></td>
+                        </tr>
+                        <tr>
+                            <td>Sand</td>
+                            <td><img src="dirt/img/sand.png" class="rounded" alt="sand"></td>
+                            <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
+                            <td><a href="#" class="btn btn-primary" onclick="add('sand', 64)">Add to Cart</a></td>
+                        </tr>
+                    </tbody>
+                </table>
                 </div>
+            <form id="addToCart" action="/dirt/add_to_cart.php" method="get">
+                <input id="blockType" type="hidden" name="block" value="" />
+                <input id="quantity" type="hidden" name="quantity" value="" />
+            </form>
+            
         </main>
         <script src="dirt/script.js"></script>
         </body>
