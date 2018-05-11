@@ -19,6 +19,7 @@
                 <h1>Dirt Co.</h1>
                 <p>We provide for all your standard Minecraft block needs!</p>
             </div>
+            <div class="container">
             <table class="table table-dark">
                 <thead>
                     <tr>
@@ -67,6 +68,7 @@
                     </tr>
                 </tbody>
             </table>
+                </div>
         </main>
         <script src="dirt/script.js"></script>
         </body>
