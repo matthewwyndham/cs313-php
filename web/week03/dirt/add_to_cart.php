@@ -1,7 +1,8 @@
 <?php session_start(); 
     if(isset($_SESSION["cart"])) {
-        $_SESSION["cart"][$_GET['block']] += $_GET['quantity'];
-        header('/week03/store.php');
+        $_SESSION["cart"][htmlspecialchars($_GET["block"])] += htmlspecialchars($_GET["quantity"]);
+        header('https://uroboros-grey.herokuapp.com/week03/store.php');
+        die();
     } else {
         $_SESSION["cart"] = [
             'clay'=>0,
