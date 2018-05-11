@@ -76,7 +76,7 @@
                     </tbody>
                 </table>
                 </div>
-            <form id="addToCart" action="/dirt/add_to_cart.php" method="get">
+            <form id="addToCart" action="week03/dirt/add_to_cart.php" method="get">
                 <input id="blockType" type="hidden" name="block" value="" />
                 <input id="quantity" type="hidden" name="quantity" value="" />
             </form>
