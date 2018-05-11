@@ -1,9 +1,6 @@
 <?php session_start(); 
     if(isset($_SESSION["cart"])) {
-        while ($block = current($_SESSION['cart'])) {
-            echo key($array).':'.$block.'<br />';
-            next($array);
-        }
+       
     } else {
         $_SESSION["cart"] = [
             'clay'=>'0',
