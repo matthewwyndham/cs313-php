@@ -7,17 +7,20 @@
     <body>
         <?php require 'header.php' ?>
         <main>
-            
+            <div class="jumbotron">
+                <h1>Dirt Co.</h1>
+                <p>Shopping Cart</p>
+            </div>
             <?php 
     if(isset($_SESSION["cart"])) {
         $count = 0;
         foreach ($_SESSION["cart"] as $block) { 
-            echo "<p class=\"alert dark-alert\">$block<a href=\"#\" class=\"btn btn-primary\" onclick=\"remove($count)\">Remove</a></p>";
+            echo "<p class=\"alert dark-alert\" role=\"alert\">$block<a href=\"#\" class=\"btn btn-primary\" onclick=\"remove($count)\">Remove</a></p>";
             $count += 1;
         } 
     } else { $_SESSION["cart"] = [];} 
             ?>
-            
+            <a class="btn btn-success" href="checkout.php">Checkout</a>
             <form id="remover" action="remove.php" method="get">
                 <input id="index" type="hidden" name="block" value="" />
             </form>
