@@ -1,7 +1,8 @@
 <?php session_start(); 
     if(isset($_SESSION["cart"])) {
-        foreach ($_SESSION["cart"] as $block) {
-            echo "<p>$block : $_SESSION['cart'][$block]</p>"
+        while ($block = current($_SESSION['cart'])) {
+            echo key($array).':'.$block.'<br />';
+            next($array);
         }
     } else {
         $_SESSION["cart"] = [
