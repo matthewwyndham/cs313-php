@@ -3,10 +3,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-</head>
+    </head>
     <body>
-        <?php require 'dirt/header.php' ?>
+        <?php require 'header.php' ?>
         <main>
+            
             <?php 
     if(isset($_SESSION["cart"])) {
         $count = 0;
@@ -16,9 +17,11 @@
         } 
     } else { $_SESSION["cart"] = [];} 
             ?>
+            
             <form id="remover" action="remove.php" method="get">
                 <input id="index" type="hidden" name="block" value="" />
             </form>
+            
         </main>
     </body>
     <script src="script.js"></script>
