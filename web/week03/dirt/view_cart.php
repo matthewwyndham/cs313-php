@@ -21,15 +21,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Clay</td>
-                            <td>Test</td>
-                        </tr>
             <?php 
                 if(isset($_SESSION["cart"])) {
                     $count = 0;
                     foreach ($_SESSION["cart"] as $block) { 
-                        echo '<tr><td>'.$block.'</td><td><a href="#" class="btn btn-primary" onclick="remove('.$count.')">Remove</a></td></tr>';
+                        echo '<tr><td>'.ucfirst($block).'</td><td><a href="#" class="btn btn-primary" onclick="remove('.$count.')">Remove</a></td></tr>';
                         $count += 1;
                     } 
                 } else { 
@@ -41,7 +37,7 @@
                 </div>
 
             <form id="remover" action="remove.php" method="get">
-                <input id="index" type="hidden" name="block" value="" />
+                <input id="index" type="hidden" name="index" value="" />
             </form>
             
         </main>
