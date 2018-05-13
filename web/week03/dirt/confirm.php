@@ -24,6 +24,8 @@
                                     foreach ($_SESSION["cart"] as $block) { 
                                         echo '<tr><td>'.ucfirst($block).' x64</td></tr>';
                                     } 
+                                    $_SESSION["cart"] = [];
+                                    
                                 } else { 
                                     $_SESSION["cart"] = [];
                                 } 
