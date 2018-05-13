@@ -38,7 +38,7 @@
                   <input type="text" class="form-control" name="zip">
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary float-right">Submit</button>
             </form>
             </div>
         </main>

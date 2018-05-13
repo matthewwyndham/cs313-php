@@ -60,7 +60,8 @@
                             ?>
                         </tbody>
                     </table>
-            </div>
+            </div>    <script src="script.js"></script>
+
         </main>
     </body>
 </html>
