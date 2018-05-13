@@ -50,7 +50,7 @@
                         <tr>
                             <td>Obsidian</td>
                             <td><img src="dirt/img/obsidian.png" class="rounded" alt="obsidian"></td>
-                            <td>8 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
+                            <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
                             <td><a href="#" class="btn btn-primary" onclick="add('obsidian', 8)">Add to Cart</a></td>
                         </tr>
                         <tr>

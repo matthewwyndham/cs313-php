@@ -15,15 +15,14 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th>Block</th>
-                                <th>Remove?</th>
+                                <th>Purchased Blocks</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
                                 if(isset($_SESSION["cart"])) {
                                     foreach ($_SESSION["cart"] as $block) { 
-                                        echo '<tr><td>'.ucfirst($block).'</td></tr>';
+                                        echo '<tr><td>'.ucfirst($block).' x64</td></tr>';
                                     } 
                                 } else { 
                                     $_SESSION["cart"] = [];
