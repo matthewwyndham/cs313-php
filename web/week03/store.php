@@ -31,37 +31,37 @@
                     <tbody>
                         <tr>
                             <td>Clay</td>
-                            <td><img src="dirt/img/clay.png" class="rounded" alt="clay"></td>
+                            <td><img src="dirt/img/clay.png" class="rounded" alt="clay" width="100px"></td>
                             <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
                             <td><a href="#" class="btn btn-primary" onclick="add('clay', 64)">Add to Cart</a></td>
                         </tr>
                         <tr>
                             <td>Diorite</td>
-                            <td><img src="dirt/img/diorite.png" class="rounded" alt="diorite"></td>
+                            <td><img src="dirt/img/diorite.png" class="rounded" alt="diorite" width="100px"></td>
                             <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
                             <td><a href="#" class="btn btn-primary" onclick="add('diorite', 64)">Add to Cart</a></td>
                         </tr>
                         <tr>
                             <td>Grass</td>
-                            <td><img src="dirt/img/grass.png" class="rounded" alt="grass"></td>
+                            <td><img src="dirt/img/grass.png" class="rounded" alt="grass" width="100px"></td>
                             <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
                             <td><a href="#" class="btn btn-primary" onclick="add('grass', 64)">Add to Cart</a></td>
                         </tr>
                         <tr>
                             <td>Obsidian</td>
-                            <td><img src="dirt/img/obsidian.png" class="rounded" alt="obsidian"></td>
+                            <td><img src="dirt/img/obsidian.png" class="rounded" alt="obsidian" width="100px"></td>
                             <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
                             <td><a href="#" class="btn btn-primary" onclick="add('obsidian', 8)">Add to Cart</a></td>
                         </tr>
                         <tr>
                             <td>Quartz</td>
-                            <td><img src="dirt/img/quartz.png" class="rounded" alt="quartz"></td>
+                            <td><img src="dirt/img/quartz.png" class="rounded" alt="quartz" width="100px"></td>
                             <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
                             <td><a href="#" class="btn btn-primary" onclick="add('quartz', 64)">Add to Cart</a></td>
                         </tr>
                         <tr>
                             <td>Sand</td>
-                            <td><img src="dirt/img/sand.png" class="rounded" alt="sand"></td>
+                            <td><img src="dirt/img/sand.png" class="rounded" alt="sand" width="100px"></td>
                             <td>64 blocks per <img src="dirt/img/gold.png"/ width="20px"></td>
                             <td><a href="#" class="btn btn-primary" onclick="add('sand', 64)">Add to Cart</a></td>
                         </tr>
