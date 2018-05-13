@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
     if(isset($_SESSION["cart"])) {
-        array_splice($_SESSION["cart"],(int)$_GET["index"]);
+        array_splice($_SESSION["cart"],(int)$_GET["index"], 1);
         header("Location: https://uroboros-grey.herokuapp.com/week03/dirt/view_cart.php");
         die();
     } else {

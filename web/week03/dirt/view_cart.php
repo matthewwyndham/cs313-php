@@ -10,7 +10,7 @@
             <div class="jumbotron">
                 <h1>Dirt Co.</h1>
                 <p>Shopping Cart</p>
-            <a class="btn btn-success float-right" href="checkout.php">Checkout</a>
+            <a class="btn btn-primary float-right" href="checkout.php">Checkout</a>
             </div>
             <div class="container">
                 <table class="table table-dark">

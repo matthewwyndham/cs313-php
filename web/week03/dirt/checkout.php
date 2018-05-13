@@ -11,6 +11,7 @@
                 <h1>Dirt Co.</h1>
                 <p>Checkout</p>
             </div>
+            <div class="container">
             <div class="alert alert-dark" role="alert">
                 Please enter your address:
             </div>
@@ -30,7 +31,7 @@
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">State</label>
-                  <input type="text" class="form-control" id="inputCity">
+                  <input type="text" class="form-control" id="inputState">
                 </div>
                 <div class="form-group col-md-2">
                   <label for="inputZip">Zip</label>
@@ -39,7 +40,7 @@
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            
+            </div>
         </main>
     </body>
     <script src="script.js"></script>
