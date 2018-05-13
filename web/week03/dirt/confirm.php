@@ -22,10 +22,8 @@
                         <tbody>
                             <?php 
                                 if(isset($_SESSION["cart"])) {
-                                    $count = 0;
                                     foreach ($_SESSION["cart"] as $block) { 
-                                        echo '<tr><td>'.ucfirst($block).'</td><td><a href="#" class="btn btn-primary" onclick="remove('.$count.')">Remove</a></td></tr>';
-                                        $count += 1;
+                                        echo '<tr><td>'.ucfirst($block).'</td></tr>';
                                     } 
                                 } else { 
                                     $_SESSION["cart"] = [];
@@ -60,6 +58,7 @@
                             ?>
                         </tbody>
                     </table>
+                    <a class="btn btn-primary float-right" href="/week03/store.php">Return to Browse</a>
             </div>    <script src="script.js"></script>
 
         </main>
