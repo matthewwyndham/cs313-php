@@ -36,6 +36,7 @@
     <body>
         <h1>Scripture Resources</h1>
         <h2>Stretch Challenges</h2>
+        <h2>1</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
             <select name="book_search">
                 <?php
@@ -60,6 +61,13 @@
         }
         ?>
         
+        <h2>2</h2>
+        <?php
+        foreach ($db->query('SELECT * FROM scriptures') as $row)
+        {
+          echo '<p><strong><a href="www.google.com">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a></strong></p>';
+        }
+        ?>
         
         <h2>Core Requirements</h2>
         <?php
