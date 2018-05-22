@@ -65,7 +65,7 @@
         <?php
         foreach ($db->query('SELECT * FROM scriptures') as $row)
         {
-          echo '<p><strong><a href="www.google.com">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a></strong></p>';
+          echo '<p><strong><a href="https://www.google.com">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a></strong></p>';
         }
         ?>
         
