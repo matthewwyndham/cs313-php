@@ -52,7 +52,7 @@
             </tr>
             <tr>   
                 <th scope="row">05</th>
-                <td><a href="week05/prepare.php">Prepare</a> - <a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="week05/prepare.php">Prepare</a> - <a href="week05/team.php">Team Activity</a></td>
                 <td><a href="comingsoon.html">Assignment</a></td>
                 <td><a href="comingsoon.html">Project</a></td>
             </tr>
