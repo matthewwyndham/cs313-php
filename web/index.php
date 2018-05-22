@@ -49,67 +49,63 @@
                 <td><a href="comingsoon.html">Team Activity</a></td>
                 <td><a href="comingsoon.html">Assignment</a></td>
                 <td><a href="comingsoon.html">Project</a></td>
-        </tr>
+            </tr>
             <tr>   
-            <th scope="row">05</th>
-            <td><a href="comingsoon.html">Team Activity</a></td>
-            <td><a href="comingsoon.html">Assignment</a></td>
-            <td><a href="comingsoon.html">Project</a></td>
-        </tr>
+                <th scope="row">05</th>
+                <td><a href="week05/prepare.php">Prepare</a></td>
+                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="comingsoon.html">Assignment</a></td>
+                <td><a href="comingsoon.html">Project</a></td>
+            </tr>
             <tr>   
-            <th scope="row">06</th>
-            <td><a href="comingsoon.html">Team Activity</a></td>
-            <td><a href="comingsoon.html">Assignment</a></td>
-            <td><a href="comingsoon.html">Project</a></td>
-        </tr>
+                <th scope="row">06</th>
+                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="comingsoon.html">Assignment</a></td>
+                <td><a href="comingsoon.html">Project</a></td>
+            </tr>
             <tr>   
-            <th scope="row">07</th>
-            <td><a href="comingsoon.html">Team Activity</a></td>
-            <td><a href="comingsoon.html">Assignment</a></td>
-            <td><a href="comingsoon.html">Project</a></td>
-        </tr>
+                <th scope="row">07</th>
+                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="comingsoon.html">Assignment</a></td>
+                <td><a href="comingsoon.html">Project</a></td>
+            </tr>
             <tr>   
-            <th scope="row">08</th>
-            <td><a href="comingsoon.html">Team Activity</a></td>
-            <td><a href="comingsoon.html">Assignment</a></td>
-            <td><a href="comingsoon.html">Project</a></td>
-        </tr>
+                <th scope="row">08</th>
+                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="comingsoon.html">Assignment</a></td>
+                <td><a href="comingsoon.html">Project</a></td>
+            </tr>
             <tr>   
-            <th scope="row">09</th>
-            <td><a href="comingsoon.html">Team Activity</a></td>
-            <td><a href="comingsoon.html">Assignment</a></td>
-            <td><a href="comingsoon.html">Project</a></td>
-        </tr>
+                <th scope="row">09</th>
+                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="comingsoon.html">Assignment</a></td>
+                <td><a href="comingsoon.html">Project</a></td>
+            </tr>
+            <tr>           
+                <th scope="row">10</th>
+                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="comingsoon.html">Assignment</a></td>
+                <td><a href="comingsoon.html">Project</a></td>
+            </tr>
             <tr>   
-        
-            <th scope="row">10</th>
-            <td><a href="comingsoon.html">Team Activity</a></td>
-            <td><a href="comingsoon.html">Assignment</a></td>
-            <td><a href="comingsoon.html">Project</a></td>
-        </tr>
-            <tr>   
-        
-            <th scope="row">11</th>
-            <td><a href="comingsoon.html">Team Activity</a></td>
-            <td><a href="comingsoon.html">Assignment</a></td>
-            <td><a href="comingsoon.html">Project</a></td>
-        </tr>
-            <tr>   
-        
-            <th scope="row">12</th>
-            <td><a href="comingsoon.html">Team Activity</a></td>
-            <td><a href="comingsoon.html">Assignment</a></td>
-            <td><a href="comingsoon.html">Project</a></td>
-        </tr>
-            <tr>   
-        
+                <th scope="row">11</th>
+                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="comingsoon.html">Assignment</a></td>
+                <td><a href="comingsoon.html">Project</a></td>
+            </tr>
+            <tr>           
+                <th scope="row">12</th>
+                <td><a href="comingsoon.html">Team Activity</a></td>
+                <td><a href="comingsoon.html">Assignment</a></td>
+                <td><a href="comingsoon.html">Project</a></td>
+            </tr>
+            <tr>           
                 <th scope="row">13</th>
                 <td><a href="comingsoon.html">Team Activity</a></td>
                 <td><a href="comingsoon.html">Assignment</a></td>
                 <td><a href="comingsoon.html">Project</a></td>
-        </tr>
-            <tr>   
-        
+            </tr>
+            <tr>           
                 <th scope="row">14</th>
                 <td><a href="comingsoon.html">Team Activity</a></td>
                 <td><a href="comingsoon.html">Assignment</a></td>
