@@ -30,8 +30,13 @@
 </head>
     <body>
         <?php 
-        $row = $db->query("SELECT * FROM scriptures WHERE id = '$scrip'");
-        echo '<p><strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong> - "' . $row['content'] . '"</p>';
+        #$row = $db->query("SELECT * FROM scriptures WHERE id = '$scrip'");
+        #echo '<p><strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong> - "' . $row['content'] . '"</p>';
+        
+        foreach ($db->query("SELECT * FROM scriptures WHERE id = '$scrip'") as $row)
+        {
+          echo '<p><strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong> - "' . $row['content'] . '"</p>';
+        }
         ?>
     </body>
 </html>
