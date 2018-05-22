@@ -49,8 +49,8 @@
         
         <?php
     if(isset($_GET['book_search'])) {
-        
-        foreach ($db->query('SELECT * FROM scriptures WHERE book =' . $search) as $row)
+        echo '<p>You searched!</p>';
+        foreach ($db->query("SELECT * FROM scriptures WHERE book = \'$search\'") as $row)
         {
           echo '<p><strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong> - "' . $row['content'] . '"</p>';
         }
