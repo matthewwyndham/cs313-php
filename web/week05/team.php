@@ -20,7 +20,7 @@
 ?>
 <?php
     if(isset($_GET['book_search'])) {
-        $search = htmlspecialchars($_GET['book_search']);        
+        $search = $_GET['book_search'];        
     }
 
 ?>
