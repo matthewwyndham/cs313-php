@@ -31,9 +31,7 @@
     <body>
         <?php 
         $row = $db->query("SELECT * FROM scriptures WHERE id = '$scrip'")
-        {
-          echo '<p><strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong> - "' . $row['content'] . '"</p>';
-        }
+        echo '<p><strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong> - "' . $row['content'] . '"</p>';
         ?>
     </body>
 </html>
