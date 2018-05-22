@@ -2,21 +2,27 @@
 
 <?php session_start(); ?>
 <?php
-        # this only works for Heroku
-        # but it's really nice
-        $dbUrl = getenv('DATABASE_URL');
+    # this only works for Heroku
+    # but it's really nice
+    $dbUrl = getenv('DATABASE_URL');
 
-        $dbopts = parse_url($dbUrl);
+    $dbopts = parse_url($dbUrl);
 
-        $dbHost = $dbopts["host"];
-        $dbPort = $dbopts["port"];
-        $dbUser = $dbopts["user"];
-        $dbPassword = $dbopts["pass"];
-        $dbName = ltrim($dbopts["path"],'/');
+    $dbHost = $dbopts["host"];
+    $dbPort = $dbopts["port"];
+    $dbUser = $dbopts["user"];
+    $dbPassword = $dbopts["pass"];
+    $dbName = ltrim($dbopts["path"],'/');
 
-        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+?>
+<?php
+    if(isset($_GET['book_search'])) {
+        $search = htmlspecialchars($_GET['book_search']);        
+    }
+
 ?>
 
 <html lang="en">
@@ -30,15 +36,30 @@
     <body>
         <h1>Scripture Resources</h1>
         <h2>Stretch Challenges</h2>
-        <form>
-            <select>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
+            <select name="book_search">
                 <?php
                 foreach ($db->query('SELECT DISTINCT book FROM scriptures') as $row) {
                     echo '<option value="' . $row['book'] . '">' . $row['book'] . '</option>';
                 }
                 ?>
             </select>
+            <input type="submit" value="search">
         </form>
+        
+        <?php
+    if(isset($_GET['book_search'])) {
+        
+        foreach ($db->query('SELECT * FROM scriptures WHERE book =' . $search) as $row)
+        {
+          echo '<p><strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong> - "' . $row['content'] . '"</p>';
+        }
+    }
+        else {
+            echo '<p>Please search.</p>';
+        }
+        ?>
+        
         
         <h2>Core Requirements</h2>
         <?php
