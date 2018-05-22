@@ -34,7 +34,7 @@
             <select>
                 <?php
                 foreach ($db->query('SELECT book FROM scriptures') as $row) {
-                    echo '<option value="' . $row . '">' . $row . '</option>';
+                    echo '<option value="' . $row['book'] . '">' . $row['book'] . '</option>';
                 }
                 ?>
             </select>
