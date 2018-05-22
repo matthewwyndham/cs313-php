@@ -2,6 +2,8 @@
 
 <?php session_start(); ?>
 <?php
+        # this only works for Heroku
+        # but it's really nice
         $dbUrl = getenv('DATABASE_URL');
 
         $dbopts = parse_url($dbUrl);
@@ -27,14 +29,24 @@
 
     <body>
         <h1>Scripture Resources</h1>
+        <h2>Stretch Challenges</h2>
+        <form>
+            <select>
+                <?php
+                foreach ($db->query('SELECT book FROM scriptures') as $row) {
+                    echo '<option value="' . $row . '">' . $row . '</option>';
+                }
+                ?>
+            </select>
+        </form>
+        
+        <h2>Core Requirements</h2>
         <?php
         foreach ($db->query('SELECT * FROM scriptures') as $row)
         {
           echo '<p><strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong> - "' . $row['content'] . '"</p>';
         }
         ?>
-        
-        
     </body>
 </html>
 
