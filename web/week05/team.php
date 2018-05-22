@@ -33,7 +33,7 @@
         <form>
             <select>
                 <?php
-                foreach ($db->query('SELECT book FROM scriptures') as $row) {
+                foreach ($db->query('SELECT DISTINCT book FROM scriptures') as $row) {
                     echo '<option value="' . $row['book'] . '">' . $row['book'] . '</option>';
                 }
                 ?>
