@@ -44,7 +44,7 @@
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
                     <select name="team_choice">
                         <?php
-                        foreach ($db->query('SELECT * FROM teams') as $row) {
+                        foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {
                             echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
                         }
                         ?>
