@@ -39,8 +39,8 @@
         <header><?php include 'header.php'?></header>
         <main>
             <div id="leftmenu"></div>
-            <div id="topmenu container">
-                <p>Select your team to log in:</p>
+            <div id="topmenu" class="jumbotron">
+                <p class="lead">Select your team to log in:</p>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
                     <select name="team_choice">
                         <?php
@@ -49,7 +49,7 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" value="search">
+                    <input type="submit" value="search" class="btn btn-primary">
                 </form>
             </div>
             <div id="content">

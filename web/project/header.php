@@ -23,7 +23,7 @@
             </li>
 -->
               <?php if($_SERVER["PHP_SELF"]=="/project/login.php"){echo '<li class="nav-item active">';} else {echo '<li class="nav-item">';} ?>
-              <a class="nav-link" href="login.php">Login</a>
+              <a class="nav-link" href="#">Login</a>
             </li>
           </ul>
         </div>
