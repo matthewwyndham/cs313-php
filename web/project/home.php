@@ -16,6 +16,13 @@
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
+<?php
+    if(isset($_GET['team_choice'])) {
+        $search = $_GET['team_choice'];        
+    }
+
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -32,51 +39,65 @@
         <header><?php include 'header.php'?></header>
         <main>
             <div id="leftmenu"></div>
-            <div id="topmenu">
-                <p>Create a Post</p>
+            <div id="topmenu container">
+                <p>Select your team to log in:</p>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
+                    <select name="team_choice">
+                        <?php
+                        foreach ($db->query('SELECT * FROM teams') as $row) {
+                            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <input type="submit" value="search">
+                </form>
             </div>
             <div id="content">
-                <?php
-                    foreach ($db->query("SELECT * FROM posts") as $row)
-                    {   
-                        echo '<div class="container" id="';
-                        echo $row['id']; # for use with subposts
-                        echo '">';
-                        echo '<div class="card">';
-                        
-                        echo '<div class="card-header">';
-                        echo $row['posttime'];
-                        echo '</div>'; # end header
-                        
-                        echo '<div class="card-body">';
-                        
-                        echo '<h5 class="card-title">'.$row['title'].'</h5>'; # title of post
-                        
-                        # username, and team
-                        echo '<h6 class="card-subtitle mb-2 text-muted">';
-                        # username
-                        $userid = $row['userid'];
-                        foreach ($db->query("SELECT * FROM users WHERE id = '$userid'") as $username) {
-                            echo $username['name'];
-                            break;
-                        } # TODO: Retrieve one line, is it possible?
-                        echo " : ";
-                        # team name
-                        $teamid = $row['teamid'];
-                        foreach ($db->query("SELECT * FROM teams WHERE id = '$teamid'") as $teamname) {
-                            echo $teamname['name'];
-                            break;
-                        } # TODO: Retrieve one line, is it possible?
-                        echo '</h6>'; # end username and team
-                        
-                        echo '<div clas="card-text">';
-                        echo $row['content'];    
-                        echo '</div>'; # end card-text
-                        
-                        echo '</div>'; # end card-body
-                        
-                        echo '</div>'; # end card
-                        echo '</div>'; # end container
+                <?php            
+                    if(isset($_GET['team_choice'])) {
+                        foreach ($db->query("SELECT * FROM posts WHERE teamid = '$search'") as $row)
+                        {   
+                            echo '<div class="container" id="';
+                            echo $row['id']; # for use with subposts
+                            echo '">';
+                            echo '<div class="card">';
+
+                            echo '<div class="card-header">';
+                            echo $row['posttime'];
+                            echo '</div>'; # end header
+
+                            echo '<div class="card-body">';
+
+                            echo '<h5 class="card-title">'.$row['title'].'</h5>'; # title of post
+
+                            # username, and team
+                            echo '<h6 class="card-subtitle mb-2 text-muted">';
+                            # username
+                            $userid = $row['userid'];
+                            foreach ($db->query("SELECT * FROM users WHERE id = '$userid'") as $username) {
+                                echo $username['name'];
+                                break;
+                            } # TODO: Retrieve one line, is it possible?
+                            echo " : ";
+                            # team name
+                            $teamid = $row['teamid'];
+                            foreach ($db->query("SELECT * FROM teams WHERE id = '$teamid'") as $teamname) {
+                                echo $teamname['name'];
+                                break;
+                            } # TODO: Retrieve one line, is it possible?
+                            echo '</h6>'; # end username and team
+
+                            echo '<div clas="card-text">';
+                            echo $row['content'];    
+                            echo '</div>'; # end card-text
+
+                            echo '</div>'; # end card-body
+
+                            echo '</div>'; # end card
+                            echo '</div>'; # end container
+                        }
+                    } else {
+                        echo '<div class="container"><p>You must log in</p></div>';
                     }
                 ?>
             </div>
