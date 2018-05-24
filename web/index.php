@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     
 </head>
-<body>
+<body> 
+    <div class="jumbotron">
+        <h2>Project link: <a href="project/home.php">Work Chatter</a></h2>
+    </div>
     <div class="jumbotron">
         <h1 class="display-3">About Me</h1>
         <h2 class="display-4">Matt Wyndham</h2>
@@ -21,9 +24,7 @@
     
     <?php date_default_timezone_set("America/Boise"); ?>
     <h1>Time: <?php echo date("Y/m/d-h:i:sa"); ?></h1>
-    <div class="container">
-        <h2>Project link: <a href="project/home.php">Work Chatter</a></h2>
-    </div>
+   
     <table class="table table-striped table-dark">
         <thead>
             <tr>
