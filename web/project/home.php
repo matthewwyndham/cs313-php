@@ -63,7 +63,7 @@
                         echo " : ";
                         # team name
                         $teamid = $row['teamid'];
-                        foreach ($db->query("SELECT * FROM team WHERE id = '$teamid'") as $teamname) {
+                        foreach ($db->query("SELECT * FROM teams WHERE id = '$teamid'") as $teamname) {
                             echo $teamname['name'];
                             break;
                         } # TODO: Retrieve one line, is it possible?
