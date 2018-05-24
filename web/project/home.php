@@ -17,8 +17,8 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php
-    if(isset($_POST['team_choice'])) {
-        $search = $_POST['team_choice'];        
+    if(isset(htmlspecialchars($_POST['team_choice']))) {
+        $search = htmlspecialchars($_POST['team_choice']);        
     }
 
 ?>
@@ -54,7 +54,7 @@
             </div>
             <div id="content">
                 <?php            
-                    if(isset($_POST['team_choice'])) {
+                    if(isset(htmlspecialchars($_POST['team_choice']))) {
                         foreach ($db->query("SELECT * FROM posts WHERE teamid = '$search'") as $row)
                         {   
                             echo '<div class="container" id="';
