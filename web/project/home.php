@@ -17,8 +17,8 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php
-    if(isset($_GET['team_choice'])) {
-        $search = $_GET['team_choice'];        
+    if(isset($_POST['team_choice'])) {
+        $search = $_POST['team_choice'];        
     }
 
 ?>
@@ -41,7 +41,7 @@
             <div id="leftmenu"></div>
             <div id="topmenu" class="jumbotron">
                 <p class="lead">Select your team to log in:</p>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <select name="team_choice">
                         <?php
                         foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {
@@ -54,7 +54,7 @@
             </div>
             <div id="content">
                 <?php            
-                    if(isset($_GET['team_choice'])) {
+                    if(isset($_POST['team_choice'])) {
                         foreach ($db->query("SELECT * FROM posts WHERE teamid = '$search'") as $row)
                         {   
                             echo '<div class="container" id="';
