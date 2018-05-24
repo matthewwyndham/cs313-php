@@ -21,7 +21,7 @@
     
     <?php date_default_timezone_set("America/Boise"); ?>
     <h1>Time: <?php echo date("Y/m/d-h:i:sa"); ?></h1>
-    
+    <h2>Project link: <a href="project/home.php">Work Chatter</a></h2>
     <table class="table table-striped table-dark">
         <thead>
             <tr>
