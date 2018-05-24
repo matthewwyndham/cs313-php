@@ -49,7 +49,7 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" value="search" class="btn btn-primary">
+                    <input type="submit" value="log in" class="btn btn-primary">
                 </form>
             </div>
             <div id="content">
