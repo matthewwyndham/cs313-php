@@ -61,7 +61,7 @@
         }
         ?>
         
-        <h2>2</h2>
+        <h2>2 and 3</h2>
         <?php
         foreach ($db->query('SELECT * FROM scriptures') as $row)
         {
