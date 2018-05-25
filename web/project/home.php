@@ -83,6 +83,7 @@
                             echo '</div>'; # end card-text
                             
                             echo '<a href="#" class="btn btn-primary">Reply</a>';
+                            echo '<a href="#" class="btn btn-primary">Like</a>';
                             
                             echo '</div>'; # end card-body
 
