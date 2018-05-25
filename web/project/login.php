@@ -1,3 +1,22 @@
+<?php session_start(); ?>
+<?php
+    # this only works for Heroku
+    # but it's really nice
+    $dbUrl = getenv('DATABASE_URL');
+
+    $dbopts = parse_url($dbUrl);
+
+    $dbHost = $dbopts["host"];
+    $dbPort = $dbopts["port"];
+    $dbUser = $dbopts["user"];
+    $dbPassword = $dbopts["pass"];
+    $dbName = ltrim($dbopts["path"],'/');
+
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -14,7 +33,7 @@
             <div id="topmenu" class="jumbotron">
                 <h1>Login</h1>
                 <p class="lead">Select your team to log in:</p>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
+                <form action="home.php" method="GET">
                     <select name="team_choice">
                         <?php
                         foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {

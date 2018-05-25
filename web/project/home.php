@@ -41,17 +41,19 @@
         <main>
             <div id="leftmenu"></div>
             <div id="topmenu" class="jumbotron">
+<!--
                 <p class="lead">Select your team to log in:</p>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
+                <form action="<?php #echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
                     <select name="team_choice">
                         <?php
-                        foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {
-                            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+                        #foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {
+                        #    echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
                         }
                         ?>
                     </select>
                     <input type="submit" value="log in" class="btn btn-primary">
                 </form>
+-->
             </div>
             <div id="content">
                 <?php            
