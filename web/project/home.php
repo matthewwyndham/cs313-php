@@ -81,7 +81,9 @@
                             echo '<div clas="card-text">';
                             echo $row['content'];    
                             echo '</div>'; # end card-text
-
+                            
+                            echo '<a href="#" class="btn btn-primary">Reply</a>';
+                            
                             echo '</div>'; # end card-body
 
                             echo '</div>'; # end card
