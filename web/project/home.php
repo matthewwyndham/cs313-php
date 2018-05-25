@@ -55,7 +55,7 @@
             </div>
             <div id="content">
                 <?php            
-                    if(isset($_GET['team_choice'])) {
+                    if(isset($search)) {
                         $query = "SELECT * FROM posts WHERE teamid = '$search'"; # TODO: change this so that it grabs username instead of userid and teamname instead of team id. then fix those below
                         foreach ($db->query($query) as $row)
                         {   
