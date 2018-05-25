@@ -5,13 +5,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item <?php if($_SERVER["PHP_SELF"]=="/project/home.php"){ echo 'active';} ?>">
             <a class="nav-link" href="home.php">Home 
                 <?php if($_SERVER["PHP_SELF"]=="/project/home.php"){ echo '<span class="sr-only">(current)</span>';} ?>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login
+            <a class="nav-link <?php if($_SERVER["PHP_SELF"]=="/project/home.php"){ echo 'active';} ?>" href="login.php">Login
                 <?php if($_SERVER["PHP_SELF"]=="/project/login.php"){ echo '<span class="sr-only">(current)</span>';} ?>
               </a>
           </li>
