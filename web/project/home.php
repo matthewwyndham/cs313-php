@@ -18,7 +18,7 @@
 ?>
 <?php
     if(isset($_GET['team_choice'])) {
-        $search = $_GET['team_choice'];        
+        $search = htmlspecialchars($_GET['team_choice']);        
     }
 
 ?>
