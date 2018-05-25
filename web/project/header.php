@@ -11,7 +11,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($_SERVER["PHP_SELF"]=="/project/home.php"){ echo 'active';} ?>" href="login.php">Login
+            <a class="nav-link <?php if($_SERVER["PHP_SELF"]=="/project/login.php"){ echo 'active';} ?>" href="login.php">Login
                 <?php if($_SERVER["PHP_SELF"]=="/project/login.php"){ echo '<span class="sr-only">(current)</span>';} ?>
               </a>
           </li>
