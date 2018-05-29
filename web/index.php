@@ -49,9 +49,9 @@
             </tr>
             <tr>   
                 <th scope="row">04</th>
-                <td><a href="comingsoon.html">Team Activity</a></td>
-                <td><a href="comingsoon.html">Assignment</a></td>
-                <td><a href="comingsoon.html">Project</a></td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
             </tr>
             <tr>   
                 <th scope="row">05</th>
