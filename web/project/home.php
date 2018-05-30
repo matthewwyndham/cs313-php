@@ -45,8 +45,21 @@
             <div id="content">
                 <?php            
                     if(isset($search)) {
-                        $query = "SELECT * FROM posts WHERE teamid = '$search'"; # TODO: change this so that it grabs username instead of userid and teamname instead of team id. then fix those below
-                        foreach ($db->query($query) as $row)
+                        $stmt = $db->prepare('SELECT * FROM posts WHERE teamid = :search');
+                        $stmt->execute(array('search' => $search)); # TODO: change this so that it grabs username instead of userid and teamname instead of team id. then fix those below
+//SELECT
+//  users.name,
+//  teams.name,
+//  posts.id,
+//  posts.posttime,
+//  posts.title,
+//  posts.content
+//FROM posts
+//INNER JOIN users
+//  ON posts.userid = users.id
+//INNER JOIN teams
+//  ON posts.teamid = teams.id;
+                        foreach ($stmt as $row)
                         {   
                             echo '<div class="container" id="';
                             echo $row['id']; # for use with subposts
