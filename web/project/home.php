@@ -1,4 +1,4 @@
-<?php require('res/php/database.php');
+<?php require('/project/res/php/database.php');
 <?php
     if(isset($_GET['team_choice'])) {
         $search = htmlspecialchars($_GET['team_choice']);        
