@@ -16,9 +16,13 @@
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
-<?php
-    if(isset($_SESSION['user'])) { $user = $_SESSION['user']; }
+<?php 
+    // create new group and add user as admin
+    //if(isset($_GET[''])) {
+    //    $search = htmlspecialchars($_GET['']);        
+    //}
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -27,44 +31,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <title>Login</title>
+    <title>Groups</title>
     </head>
     <body>        
         <header><?php include 'header.php'?></header>
         <main>
             
             <div id="topmenu" class="jumbotron">
-                <h1>Login</h1>
-                <?php if(!isset($user)) {
-                    echo '<p class="lead">Please enter your credentials:</p>
-                    <form class="dropdown-menu p-4" action="login.php" method="get">
-                        <div class="form-group">
-                            <label for="user_email">Email address</label>
-                            <input name="user_email" type="email" class="form-control" id="user_email" placeholder="email@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="user_password">Password</label>
-                            <input name="user_password" type="password" class="form-control" id="user_password" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </form>';
-} else {
-    echo "<p>Hello $user </p>";
-}
-                
-<!--
-                <p class="lead">Select your team to log in:</p>
+                <h1>Groups</h1>
+                <p class="lead">Create a new team:</p>
+                <div class="container">
+                    <form action="groups.php" method="GET">
+                        
+                    </form>
+                </div>
+                <p class="lead">Select your team:</p>
                 <form action="home.php" method="GET">
-                    <select name="team_choice">
-                        <?php
-//                        foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {
-//                            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
-//                        }
+                    <select name="team_choice"> 
+                        <?php // TODO: change this so it only selects the groups the user is in.
+                        foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {
+                            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+                        }
                         ?>
                     </select>
                     <input type="submit" value="log in" class="btn btn-primary">
                 </form>
--->
             </div>
         </main>
         
