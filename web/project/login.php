@@ -17,7 +17,16 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php
-    if(isset($_SESSION['user'])) { $user = $_SESSION['user']; }
+    if(isset($_SESSION['user_name'])) { $username = $_SESSION['user_name']; }
+    else if (isset($_GET['user_email']) and isset($_GET['user_password'])) {
+        $query = "SELECT users.id, users.email, users.password FROM users WHERE users.email = :user_email AND users.password = :user_password";
+        $statement = $db->prepare($query);
+        $statement->bindvalue(":user_email", $_GET['user_email'], PDO::PARAM_STR(80));
+        $statement->bindvalue(":user_password", $_GET['user_password'], PDO::PARAM_STR(20));
+        $statement->execute();
+        foreach($statement as $user) {$_SESSION['user'] = $user['id']; $_SESSION['user_name'] = $user['name']; break;}
+        $username = $_SESSION['user_name'];
+    } else {;}
 ?>
 
 <!doctype html>
@@ -29,13 +38,14 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <title>Login</title>
     </head>
+    <!-- BODY OF THE POST -->
     <body>        
         <header><?php include 'header.php'?></header>
         <main>
             
             <div id="topmenu" class="jumbotron">
                 <h1>Login</h1>
-                <?php if(!isset($user)) {
+                <?php if(!isset($username)) {
                     echo '<p class="lead">Please enter your credentials:</p>
                     <form class="dropdown-menu p-4" action="login.php" method="get">
                         <div class="form-group">
@@ -49,22 +59,8 @@
                         <button type="submit" class="btn btn-primary">Sign in</button>
                     </form>';
 } else {
-    echo "<p>Hello $user </p>";
-}
-                
-<!--
-                <p class="lead">Select your team to log in:</p>
-                <form action="home.php" method="GET">
-                    <select name="team_choice">
-                        <?php
-//                        foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {
-//                            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
-//                        }
-                        ?>
-                    </select>
-                    <input type="submit" value="log in" class="btn btn-primary">
-                </form>
--->
+    echo "<p>Hello $username </p>";
+} ?>
             </div>
         </main>
         
