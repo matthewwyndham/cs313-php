@@ -21,8 +21,8 @@
     else if (isset($_GET['user_email']) and isset($_GET['user_password'])) {
         $query = "SELECT users.id, users.email, users.password FROM users WHERE users.email = :user_email AND users.password = :user_password";
         $statement = $db->prepare($query);
-        $statement->bindvalue(':user_email', $_GET['user_email'], PDO::PARAM_STR;
-        $statement->bindvalue(':user_password', $_GET['user_password'], PDO::PARAM_STR;
+        $statement->bindvalue(':user_email', $_GET['user_email'], PDO::PARAM_STR);
+        $statement->bindvalue(':user_password', $_GET['user_password'], PDO::PARAM_STR);
         $statement->execute();
         foreach($statement as $user) {$_SESSION['user'] = $user['id']; $_SESSION['user_name'] = $user['name']; break;}
         $username = $_SESSION['user_name'];
