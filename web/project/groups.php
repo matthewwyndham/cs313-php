@@ -17,10 +17,7 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php 
-    // create new group and add user as admin
-    //if(isset($_GET[''])) {
-    //    $search = htmlspecialchars($_GET['']);        
-    //}
+    if(isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
 ?>
 
 
@@ -49,12 +46,15 @@
                 <form action="home.php" method="GET">
                     <select name="team_choice"> 
                         <?php // TODO: change this so it only selects the groups the user is in.
-                        foreach ($db->query('SELECT * FROM teams ORDER BY name') as $row) {
+                            $query = "SELECT teams.name, teams.id FROM teams WHERE teams.id IN (SELECT user_team.teamid FROM user_team WHERE user_team.userid = :user_id)";
+                            $statement = $db->prepare($query);
+                            $statement->execute(array('user_id' => $userid));
+                            foreach ($statement as $row) {
                             echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
                         }
                         ?>
                     </select>
-                    <input type="submit" value="log in" class="btn btn-primary">
+                    <input type="submit" value="change_team" class="btn btn-primary">
                 </form>
             </div>
         </main>
