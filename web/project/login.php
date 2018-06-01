@@ -24,7 +24,7 @@
         $statement->bindvalue(':user_email', $_GET['user_email'], PDO::PARAM_STR);
         $statement->bindvalue(':user_password', $_GET['user_password'], PDO::PARAM_STR);
         $statement->execute();
-        foreach($statement as $user) {$_SESSION['user'] = $user['id']; $_SESSION['user_name'] = $user['name']; break;}
+        foreach($statement as $user) {var_dump($user); $_SESSION['user'] = $user['id']; $_SESSION['user_name'] = $user['name']; break;}
         $username = $_SESSION['user_name'];
     } else {;}
 ?>
