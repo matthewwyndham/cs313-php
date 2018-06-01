@@ -34,7 +34,7 @@
         foreach($statement as $teamid) {$_SESSION['teamid'] = $teamid['teamid']; break;}
         # SESSION VARIABLES: user, user_name, teamid
     } 
-    else if (isset($_GET['logout'])) {
+    if (isset($_GET['logout'])) {
         session_unset();
     }
 ?>
