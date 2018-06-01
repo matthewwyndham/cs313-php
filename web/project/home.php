@@ -17,7 +17,23 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php
-    if(isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
+    if(isset($_SESSION['user'])) { 
+        $username = $_SESSION['user_name']; 
+        $userid = $_SESSION['user']; 
+        $teamid = $_SESSION['teamid'];
+        if(isset($_POST['post_content'])) {
+            $query = "INSERT INTO posts (userid, teamid, title, content, posttime) VALUES (:userid, :teamid, :post_title, :post_content, :time)";
+            $stmt = $db->prepare(query);
+            $stmt->bindvalue(':userid', $userid, PDO::PARAM_INT);
+            $stmt->bindvalue(':teamid', $teamid, PDO::PARAM_INT);
+            $stmt->bindvalue(':post_title', $_POST['post_title'], PDO::PARAM_STR);
+            $stmt->bindvalue(':post_content', $_POST['post_content'], PDO::PARAM_STR);
+            $stmt->bindvalue(':time', date('Y-m-d H:i:s'), PDO::PARAM_STR);
+            $stmt->execute();
+            header('Location: home.php');
+            die();
+        }
+    }
 ?>
 
 <!doctype html>
@@ -38,7 +54,21 @@
         <main>
             <div id="leftmenu"></div>
             <div id="topmenu" class="jumbotron">
-                
+                <?php if(isset($userid)) {
+                    echo '<form action="home.php" method="POST">
+                        <div class="form-group">
+                            <label for="post_title">Title</label>
+                            <input name="post_title" type="text" class="form-control" id="post_title" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="post_content">Post</label>
+                            <input name="post_content" type="text" class="form-control" id="post_content" placeholder="Content">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>';
+                    
+                    
+                } ?>
             </div>
             <div id="content">
                 <?php            

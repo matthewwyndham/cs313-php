@@ -37,12 +37,14 @@
             
             <div id="topmenu" class="jumbotron">
                 <h1>Groups</h1>
+<!--
                 <p class="lead">Create a new team:</p>
                 <div class="container">
                     <form action="groups.php" method="GET">
                         
                     </form>
                 </div>
+-->
                 <p class="lead">Select your team:</p>
                 <form action="groups.php" method="GET">
                     <select name="team_choice"> 
