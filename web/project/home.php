@@ -43,7 +43,7 @@
             <div id="content">
                 <?php            
                     if(isset($userid)) {
-                        $get_posts = "SELECT users.name, teams.name, posts.id, posts.posttime, posts.title, posts.content, posts.teamid FROM posts INNER JOIN users ON posts.userid = users.id INNER JOIN teams ON posts.teamid = teams.id WHERE posts.teamid = :search";
+                        $get_posts = "SELECT users.name AS username, teams.name AS teamname, posts.id, posts.posttime, posts.title, posts.content, posts.teamid FROM posts INNER JOIN users ON posts.userid = users.id INNER JOIN teams ON posts.teamid = teams.id WHERE posts.teamid = :search";
                         $stmt = $db->prepare($get_posts);
                         $stmt->execute(array('search' => $teamid));
 
@@ -65,10 +65,10 @@
                             # username, and team
                             echo '<h6 class="card-subtitle mb-2 text-muted">';
                             # username
-                            echo $row['name'];
+                            echo $row['username'];
                             echo " : ";
                             # team name
-                            echo $row['name'];
+                            echo $row['teamname'];
                             echo '</h6>'; # end username and team
 
                             echo '<div clas="card-text">';
