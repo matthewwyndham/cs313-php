@@ -65,10 +65,10 @@
                             # username, and team
                             echo '<h6 class="card-subtitle mb-2 text-muted">';
                             # username
-                            echo $row['users.name'];
+                            echo $row['name'];
                             echo " : ";
                             # team name
-                            echo $row['teams.name'];
+                            echo $row['name'];
                             echo '</h6>'; # end username and team
 
                             echo '<div clas="card-text">';
