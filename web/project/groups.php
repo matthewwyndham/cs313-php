@@ -18,6 +18,7 @@
 ?>
 <?php 
     if(isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
+    if(isset($_GET['team_choice'])) {$_SESSION['teamid'] = $_GET['team_choice']; $teamid = $_SESSION['teamid'];}
 ?>
 
 
@@ -43,7 +44,7 @@
                     </form>
                 </div>
                 <p class="lead">Select your team:</p>
-                <form action="home.php" method="GET">
+                <form action="groups.php" method="GET">
                     <select name="team_choice"> 
                         <?php // TODO: change this so it only selects the groups the user is in.
                             $query = "SELECT teams.name, teams.id FROM teams WHERE teams.id IN (SELECT user_team.teamid FROM user_team WHERE user_team.userid = :user_id)";
