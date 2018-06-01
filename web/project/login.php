@@ -18,7 +18,7 @@
 ?>
 <?php
     if(isset($_SESSION['user_name'])) { $username = $_SESSION['user_name']; }
-    else if (isset($_GET['user_email']) and isset($_GET['user_password'])) {
+    if (isset($_GET['user_email'])) {
         $query = "SELECT users.id, users.email, users.password FROM users WHERE users.email = :user_email AND users.password = :user_password";
         $statement = $db->prepare($query);
         $statement->bindvalue(':user_email', $_GET['user_email'], PDO::PARAM_STR);
