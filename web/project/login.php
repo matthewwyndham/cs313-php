@@ -36,6 +36,8 @@
     } 
     if (isset($_GET['logout'])) {
         session_unset();
+        header('Location: login.php');
+        die();
     }
 ?>
 
@@ -70,7 +72,7 @@
                     </form>';
 } else {
     echo "<p>Hello $username </p>";
-    echo '<form class="p-4" action="login.php" method="get"><input name="logout" type="hidden" value="logout"><button type="submit" class="btn btn-primary">Sign Out</button></form>';
+    echo '<form class="p-4" action="login.php" method="get"><input name="logout" type="hidden" value="true"><button type="submit" class="btn btn-primary">Sign Out</button></form>';
 } ?>
             </div>
         </main>
