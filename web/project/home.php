@@ -42,7 +42,7 @@
             </div>
             <div id="content">
                 <?php            
-                    if(isset($user)) {
+                    if(isset($userid)) {
                         #$get_posts = "SELECT users.name, teams.name, posts.id, posts.posttime, posts.title, posts.content FROM posts INNER JOIN users ON posts.userid = users.id INNER JOIN teams ON posts.teamid = teams.id;"
                         $stmt = $db->prepare('SELECT * FROM posts WHERE teamid = :search');
                         $stmt->execute(array('search' => $teamid));
