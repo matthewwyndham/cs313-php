@@ -45,6 +45,7 @@
             
             <div id="topmenu" class="jumbotron">
                 <p><?php var_dump($user); ?></p>
+                <p><?php echo 'User id: '.$_SESSION['user'].', username:'.$_SESSION['user_name']; ?></p>
                 <h1>Login</h1>
                 <?php if(!isset($username)) {
                     echo '<p class="lead">Please enter your credentials:</p>
