@@ -43,8 +43,8 @@
             <div id="content">
                 <?php            
                     if(isset($userid)) {
-                        #$get_posts = "SELECT users.name, teams.name, posts.id, posts.posttime, posts.title, posts.content FROM posts INNER JOIN users ON posts.userid = users.id INNER JOIN teams ON posts.teamid = teams.id;"
-                        $stmt = $db->prepare('SELECT * FROM posts WHERE teamid = :search');
+                        $get_posts = "SELECT users.name, teams.name, posts.id, posts.posttime, posts.title, posts.content, posts.teamid FROM posts INNER JOIN users ON posts.userid = users.id INNER JOIN teams ON posts.teamid = teams.id WHERE posts.teamid = :search";
+                        $stmt = $db->prepare($get_posts);
                         $stmt->execute(array('search' => $teamid));
 
                         foreach ($stmt as $row)
@@ -65,18 +65,10 @@
                             # username, and team
                             echo '<h6 class="card-subtitle mb-2 text-muted">';
                             # username
-                            $userid = $row['userid'];
-                            foreach ($db->query("SELECT * FROM users WHERE id = '$userid'") as $username) {
-                                echo $username['name'];
-                                break;
-                            } # TODO: Retrieve one line, is it possible?
+                            echo $row['users.name'];
                             echo " : ";
                             # team name
-                            $teamid = $row['teamid'];
-                            foreach ($db->query("SELECT * FROM teams WHERE id = '$teamid'") as $teamname) {
-                                echo $teamname['name'];
-                                break;
-                            } # TODO: Retrieve one line, is it possible?
+                            echo $row['teams.name'];
                             echo '</h6>'; # end username and team
 
                             echo '<div clas="card-text">';
