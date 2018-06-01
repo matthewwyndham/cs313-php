@@ -17,8 +17,8 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php
-    if(isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
-    if (isset($_GET['user_email'])) {
+    if (isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
+    else if (isset($_GET['user_email'])) {
         $query = "SELECT users.id, users.name, users.email, users.password FROM users WHERE users.email = :user_email AND users.password = :user_password";
         $statement = $db->prepare($query);
         $statement->bindvalue(':user_email', $_GET['user_email'], PDO::PARAM_STR);
@@ -33,7 +33,10 @@
         $statement->execute();
         foreach($statement as $teamid) {$_SESSION['teamid'] = $teamid['teamid']; break;}
         # SESSION VARIABLES: user, user_name, teamid
-    } else {;}
+    } 
+    else if (isset($_GET['logout'])) {
+        session_unset();
+    }
 ?>
 
 <!doctype html>
@@ -67,6 +70,7 @@
                     </form>';
 } else {
     echo "<p>Hello $username </p>";
+    echo '<form class="p-4" action="login.php" method="get"><input name="logout" type="hidden" value="logout"><button type="submit" class="btn btn-primary">Sign Out</button></form>';
 } ?>
             </div>
         </main>
