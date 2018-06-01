@@ -47,7 +47,7 @@
                 <h1>Login</h1>
                 <?php if(!isset($username)) {
                     echo '<p class="lead">Please enter your credentials:</p>
-                    <form class="dropdown-menu p-4" action="login.php" method="get">
+                    <form class="p-4" action="login.php" method="get">
                         <div class="form-group">
                             <label for="user_email">Email address</label>
                             <input name="user_email" type="email" class="form-control" id="user_email" placeholder="email@example.com">
