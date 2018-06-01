@@ -18,7 +18,7 @@
 ?>
 <?php 
     if(isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
-    if(isset($_GET['team_choice'])) {$_SESSION['teamid'] = $_GET['team_choice']; $teamid = $_SESSION['teamid'];}
+    if(isset($_GET['team_choice'])) {$_SESSION['teamid'] = $_GET['team_choice']; $teamid = $_SESSION['teamid']; header('Location: home.php'); die();}
 ?>
 
 
