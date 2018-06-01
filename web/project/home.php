@@ -55,7 +55,8 @@
             <div id="leftmenu"></div>
             <div id="topmenu" class="jumbotron">
                 <?php if(isset($userid)) {
-                    echo '<form action="home.php" method="GET">
+                    echo '<h1>New Post</h1>
+                    <form action="home.php" method="GET">
                         <div class="form-group">
                             <label for="post_title">Title</label>
                             <input name="post_title" type="text" class="form-control" id="post_title" placeholder="Title">
@@ -64,7 +65,7 @@
                             <label for="post_content">Post</label>
                             <input name="post_content" type="text" class="form-control" id="post_content" placeholder="Content">
                         </div>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Post</button>
                     </form>';
                     
                     
