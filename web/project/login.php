@@ -17,7 +17,7 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php
-    if(isset($_SESSION['user_name'])) { $username = $_SESSION['user_name']; }
+    if(isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
     if (isset($_GET['user_email'])) {
         $query = "SELECT users.id, users.name, users.email, users.password FROM users WHERE users.email = :user_email AND users.password = :user_password";
         $statement = $db->prepare($query);
@@ -26,6 +26,13 @@
         $statement->execute();
         foreach($statement as $user) {$_SESSION['user'] = $user['id']; $_SESSION['user_name'] = $user['name']; break;}
         $username = $_SESSION['user_name'];
+        $userid = $_SESSION['user'];
+        $query = "SELECT user_team.teamid FROM user_team WHERE user_team.userid = :user_id";
+        $statement = $db->prepare($query);
+        $statement->bindvalue(':user_id', $userid, PDO::PARAM_INT);
+        $statement->execute();
+        foreach($statement as $teamid) {$_SESSION['teamid'] = $teamid['teamid']; break;}
+        # SESSION VARIABLES: user, user_name, teamid
     } else {;}
 ?>
 
@@ -44,8 +51,6 @@
         <main>
             
             <div id="topmenu" class="jumbotron">
-                <p><?php var_dump($user); ?></p>
-                <p><?php echo 'User id: '.$_SESSION['user'].', username:'.$_SESSION['user_name']; ?></p>
                 <h1>Login</h1>
                 <?php if(!isset($username)) {
                     echo '<p class="lead">Please enter your credentials:</p>

@@ -17,10 +17,7 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php
-    if(isset($_GET['team_choice'])) {
-        $search = htmlspecialchars($_GET['team_choice']);        
-    }
-
+    if(isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
 ?>
 
 <!doctype html>
@@ -45,10 +42,10 @@
             </div>
             <div id="content">
                 <?php            
-                    if(isset($search)) {
+                    if(isset($user)) {
                         #$get_posts = "SELECT users.name, teams.name, posts.id, posts.posttime, posts.title, posts.content FROM posts INNER JOIN users ON posts.userid = users.id INNER JOIN teams ON posts.teamid = teams.id;"
                         $stmt = $db->prepare('SELECT * FROM posts WHERE teamid = :search');
-                        $stmt->execute(array('search' => $search));
+                        $stmt->execute(array('search' => $teamid));
 
                         foreach ($stmt as $row)
                         {   
