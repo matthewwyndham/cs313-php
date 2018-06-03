@@ -106,7 +106,7 @@
                             echo $row['content'];    
                             echo '</div>'; # end card-text
                             
-                            echo '<a href="#" class="btn btn-primary float-right">Reply</a>'; 
+                            #echo '<a href="#" class="btn btn-primary float-right">Reply</a>'; 
                             
                             echo '</div>'; # end card-body
 
