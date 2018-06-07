@@ -30,8 +30,6 @@
             $stmt->bindvalue(':post_content', $_POST["post_content"], PDO::PARAM_STR);
             $stmt->bindvalue(':time', date('Y-m-d H:i:s'), PDO::PARAM_STR);
             $stmt->execute();
-            header('Location: home.php');
-            die();
         }
     }
 ?>

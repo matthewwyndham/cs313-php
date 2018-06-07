@@ -17,8 +17,29 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
 <?php 
-    if(isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
-    if(isset($_GET['team_choice'])) {$_SESSION['teamid'] = $_GET['team_choice']; $teamid = $_SESSION['teamid']; header('Location: home.php'); die();}
+    if(isset($_SESSION['user'])) { 
+        $username = $_SESSION['user_name']; 
+        $userid = $_SESSION['user']; 
+        $teamid = $_SESSION['teamid'];
+        $isadmin = $_SESSION['isadmin'];
+    }
+    if(isset($_POST['team_choice'])) {
+        $_SESSION['teamid'] = $_POST['team_choice']; 
+        $teamid = $_SESSION['teamid'];
+        $query = "SELECT user_team.isadmin FROM user_team WHERE user_team.teamid = :team_id and user_team.userid = :user_id";
+        $statement = $db->prepare($query);
+        $statement->bindvalue(':user_id', $userid, PDO::PARAM_INT);
+        $statement->bindvalue(':team_id', $teamid, PDO::PARAM_INT);
+        $statement->execute();
+        foreach($statement as $teamid) {
+            if ($teamid['isadmin'] == 't') {
+                $_SESSION['isadmin'] = true;
+            } else {
+                $_SESSION['isadmin'] = false;
+            }
+            break;
+        }
+    }
 ?>
 
 
@@ -40,15 +61,15 @@
 <!--
                 <p class="lead">Create a new team:</p>
                 <div class="container">
-                    <form action="groups.php" method="GET">
+                    <form action="groups.php" method="POST">
                         
                     </form>
                 </div>
 -->
                 <p class="lead">Select your team:</p>
-                <form action="groups.php" method="GET">
+                <form action="groups.php" method="POST">
                     <select name="team_choice"> 
-                        <?php // TODO: change this so it only selects the groups the user is in.
+                        <?php
                             $query = "SELECT teams.name, teams.id FROM teams WHERE teams.id IN (SELECT user_team.teamid FROM user_team WHERE user_team.userid = :user_id)";
                             $statement = $db->prepare($query);
                             $statement->execute(array('user_id' => $userid));

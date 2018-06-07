@@ -27,13 +27,20 @@
         foreach($statement as $user) {$_SESSION['user'] = $user['id']; $_SESSION['user_name'] = $user['name']; break;}
         $username = $_SESSION['user_name'];
         $userid = $_SESSION['user'];
-        $query = "SELECT user_team.teamid FROM user_team WHERE user_team.userid = :user_id";
+        $query = "SELECT user_team.teamid, user_team.isadmin FROM user_team WHERE user_team.userid = :user_id";
         $statement = $db->prepare($query);
         $statement->bindvalue(':user_id', $userid, PDO::PARAM_INT);
         $statement->execute();
-        foreach($statement as $teamid) {$_SESSION['teamid'] = $teamid['teamid']; break;}
+        foreach($statement as $teamid) {
+            $_SESSION['teamid'] = $teamid['teamid'];
+            if ($teamid['isadmin'] == 't') {
+                $_SESSION['isadmin'] = true;
+            } else {
+                $_SESSION['isadmin'] = false;
+            }
+            break;
+        }
         # SESSION VARIABLES: user, user_name, teamid
-        header('Location: login.php'); die();
     } 
     if (isset($_POST['logout'])) {
         session_unset();
