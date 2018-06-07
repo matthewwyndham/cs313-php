@@ -21,13 +21,13 @@
         $username = $_SESSION['user_name']; 
         $userid = $_SESSION['user']; 
         $teamid = $_SESSION['teamid'];
-        if(isset($_GET['post_content'])) {
+        if(isset($_POST['post_content'])) {
             $query = "INSERT INTO posts (userid, teamid, title, content, posttime) VALUES (:userid, :teamid, :post_title, :post_content, :time)";
             $stmt = $db->prepare($query);
             $stmt->bindvalue(':userid', $userid, PDO::PARAM_INT);
             $stmt->bindvalue(':teamid', $teamid, PDO::PARAM_INT);
-            $stmt->bindvalue(':post_title', $_GET["post_title"], PDO::PARAM_STR);
-            $stmt->bindvalue(':post_content', $_GET["post_content"], PDO::PARAM_STR);
+            $stmt->bindvalue(':post_title', $_POST["post_title"], PDO::PARAM_STR);
+            $stmt->bindvalue(':post_content', $_POST["post_content"], PDO::PARAM_STR);
             $stmt->bindvalue(':time', date('Y-m-d H:i:s'), PDO::PARAM_STR);
             $stmt->execute();
             header('Location: home.php');
@@ -56,7 +56,7 @@
             <div id="topmenu" class="jumbotron">
                 <?php if(isset($userid)) {
                     echo '<h1>New Post</h1>
-                    <form action="home.php" method="GET">
+                    <form action="home.php" method="post">
                         <div class="form-group">
                             <label for="post_title">Title</label>
                             <input name="post_title" type="text" class="form-control" id="post_title" placeholder="Title">
