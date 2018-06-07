@@ -18,11 +18,11 @@
 ?>
 <?php
     if (isset($_SESSION['user'])) { $username = $_SESSION['user_name']; $userid = $_SESSION['user']; $teamid = $_SESSION['teamid'];}
-    else if (isset($_GET['user_email'])) {
+    else if (isset($_POST['user_email'])) {
         $query = "SELECT users.id, users.name, users.email, users.password FROM users WHERE users.email = :user_email AND users.password = :user_password";
         $statement = $db->prepare($query);
-        $statement->bindvalue(':user_email', $_GET['user_email'], PDO::PARAM_STR);
-        $statement->bindvalue(':user_password', $_GET['user_password'], PDO::PARAM_STR);
+        $statement->bindvalue(':user_email', $_POST['user_email'], PDO::PARAM_STR);
+        $statement->bindvalue(':user_password', $_POST['user_password'], PDO::PARAM_STR);
         $statement->execute();
         foreach($statement as $user) {$_SESSION['user'] = $user['id']; $_SESSION['user_name'] = $user['name']; break;}
         $username = $_SESSION['user_name'];
@@ -35,7 +35,7 @@
         # SESSION VARIABLES: user, user_name, teamid
         header('Location: login.php'); die();
     } 
-    if (isset($_GET['logout'])) {
+    if (isset($_POST['logout'])) {
         session_unset();
         header('Location: login.php');
         die();
@@ -60,7 +60,7 @@
                 <h1>Login</h1>
                 <?php if(!isset($username)) {
                     echo '<p class="lead">Please enter your credentials:</p>
-                    <form class="p-4" action="login.php" method="get">
+                    <form class="p-4" action="login.php" method="post">
                         <div class="form-group">
                             <label for="user_email">Email address</label>
                             <input name="user_email" type="email" class="form-control" id="user_email" placeholder="email@example.com">
@@ -73,7 +73,7 @@
                     </form>';
 } else {
     echo "<p>Hello $username </p>";
-    echo '<form class="p-4" action="login.php" method="get"><input name="logout" type="hidden" value="true"><button type="submit" class="btn btn-danger">Sign Out</button></form>';
+    echo '<form class="p-4" action="login.php" method="POST"><input name="logout" type="hidden" value="true"><button type="submit" class="btn btn-danger">Sign Out</button></form>';
 } ?>
             </div>
         </main>
