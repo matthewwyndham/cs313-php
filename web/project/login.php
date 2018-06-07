@@ -33,6 +33,7 @@
         $statement->execute();
         foreach($statement as $teamid) {$_SESSION['teamid'] = $teamid['teamid']; break;}
         # SESSION VARIABLES: user, user_name, teamid
+        header('Location: login.php'); die();
     } 
     if (isset($_GET['logout'])) {
         session_unset();
