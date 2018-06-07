@@ -21,6 +21,7 @@
         $username = $_SESSION['user_name']; 
         $userid = $_SESSION['user']; 
         $teamid = $_SESSION['teamid'];
+        $isadmin = $_SESSION['isadmin'];
         if(isset($_POST['post_content'])) {
             $query = "INSERT INTO posts (userid, teamid, title, content, posttime) VALUES (:userid, :teamid, :post_title, :post_content, :time)";
             $stmt = $db->prepare($query);
@@ -52,6 +53,12 @@
         <main>
             <div id="leftmenu"></div>
             <div id="topmenu" class="jumbotron">
+                <?php if(isset($isadmin)) {
+                            if($isadmin) {
+                                echo '<h1>You are admin</h1>';
+                            }
+                        } 
+                ?>
                 <?php if(isset($userid)) {
                     echo '<h1>New Post</h1>
                     <form action="home.php" method="post">
