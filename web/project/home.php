@@ -27,8 +27,8 @@
             $stmt = $db->prepare($query);
             $stmt->bindvalue(':userid', $userid, PDO::PARAM_INT);
             $stmt->bindvalue(':teamid', $teamid, PDO::PARAM_INT);
-            $stmt->bindvalue(':post_title', $_POST["post_title"], PDO::PARAM_STR);
-            $stmt->bindvalue(':post_content', $_POST["post_content"], PDO::PARAM_STR);
+            $stmt->bindvalue(':post_title', htmlspecialchars($_POST["post_title"]), PDO::PARAM_STR);
+            $stmt->bindvalue(':post_content', htmlspecialchars($_POST["post_content"]), PDO::PARAM_STR);
             $stmt->bindvalue(':time', date('Y-m-d H:i:s'), PDO::PARAM_STR);
             $stmt->execute();
         }
@@ -55,7 +55,7 @@
             <div id="topmenu" class="jumbotron">
                 <?php if(isset($isadmin)) {
                             if($isadmin) {
-                                echo '<h1>You are admin</h1>';
+                                echo '<h1>Add a User to this Group</h1>';
                             }
                         } 
                 ?>
