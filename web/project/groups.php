@@ -67,9 +67,9 @@
                 </div>
 -->
                 <?php if(isset($username)) {
-                <p class="lead">Select your team:</p>
+                echo '<p class="lead">Select your team:</p>
                 <form action="groups.php" method="POST">
-                    <select name="team_choice"> 
+                    <select name="team_choice">';
                         
                             $query = "SELECT teams.name, teams.id FROM teams WHERE teams.id IN (SELECT user_team.teamid FROM user_team WHERE user_team.userid = :user_id)";
                             $statement = $db->prepare($query);
@@ -78,9 +78,9 @@
                             echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
                         }
                         
-                    </select>
+                    echo '</select>
                     <input type="submit" value="change_team" class="btn btn-primary">
-                </form>
+                </form>';
 } else {
     echo '<p>You must login</p>';
 }
