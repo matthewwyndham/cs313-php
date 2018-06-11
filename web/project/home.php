@@ -56,6 +56,21 @@
                 <?php if(isset($isadmin)) {
                             if($isadmin) {
                                 echo '<h1>Add a User to this Group</h1>';
+                                echo '<form action="add_user.php" method="post">
+                                        <div class="form-group">
+                                            <label for="user_email">User Email</label>
+                                            <input name="user_email" type="text" class="form-control" id="user_email" placeholder="Email Address">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Privilege Level:</p>
+                                            <input name="privilege" type="radio" id="p_user" checked>
+                                            <label for="p_user">User</label>
+                                            <br/>
+                                            <input name="privilege" type="radio" id="p_admin">
+                                            <label for="p_admin">Admin</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Post</button>
+                                    </form>';
                             }
                         } 
                 ?>
