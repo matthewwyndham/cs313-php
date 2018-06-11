@@ -63,10 +63,10 @@
                                         </div>
                                         <div class="form-group">
                                             <p>Privilege Level:</p>
-                                            <input name="privilege" type="radio" id="p_user" checked>
+                                            <input name="privilege" type="radio" id="p_user" value="p_user" checked>
                                             <label for="p_user">User</label>
                                             <br/>
-                                            <input name="privilege" type="radio" id="p_admin">
+                                            <input name="privilege" type="radio" id="p_admin" value="p_admin">
                                             <label for="p_admin">Admin</label>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Post</button>
