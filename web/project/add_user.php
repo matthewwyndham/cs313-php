@@ -30,9 +30,9 @@
             $pq2->bindvalue(':teamid', $_SESSION['teamid'], PDO::PARAM_INT);
             $pq2->bindvalue(':userid', $new_user_id, PDO::PARAM_INT);
             if($_SESSION['privilege'] == "p_admin") {
-                $is_admin = TRUE;
+                $is_admin = 't';
             } else {
-                $is_admin = FALSE;
+                $is_admin = 'f';
             }
             $pq2->bindvalue(':isAdmin', $is_admin, PDO::PARAM_BOOL);
             $pq2->execute();
