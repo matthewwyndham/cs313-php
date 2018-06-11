@@ -47,8 +47,6 @@ function test_input($data) {
         }
     }
     
-echo "<p>New User: $new_user_id, $is_admin</p>";
-
-//    header('Location: home.php');
-//    die();
+    header('Location: home.php');
+    die();
 ?>
