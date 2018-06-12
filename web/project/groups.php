@@ -23,8 +23,8 @@
         $teamid = $_SESSION['teamid'];
         $isadmin = $_SESSION['isadmin'];
     }
-    if(isset($_POST['team_choice'])) {
-        $_SESSION['teamid'] = $_POST['team_choice']; 
+    if(isset($_GET['team_choice'])) {
+        $_SESSION['teamid'] = $_GET['team_choice']; 
         $teamid = $_SESSION['teamid'];
         $query = "SELECT user_team.isadmin FROM user_team WHERE user_team.teamid = :team_id and user_team.userid = :user_id";
         $statement = $db->prepare($query);
@@ -75,7 +75,7 @@
           <button type="submit" class="btn btn-primary">Create</button>
           <hr/>';
                 echo '<p class="lead">Select your team:</p>
-                <form action="groups.php" method="POST">
+                <form action="groups.php" method="GET">
                     <select name="team_choice">';
                         
                             $query = "SELECT teams.name, teams.id FROM teams WHERE teams.id IN (SELECT user_team.teamid FROM user_team WHERE user_team.userid = :user_id)";
