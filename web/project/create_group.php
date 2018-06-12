@@ -21,7 +21,7 @@
       $sq->bindvalue(':new_group', $_POST['new_group'], PDO::PARAM_STR);
       $sq->execute();
       
-      $group_id = $db->lastInsertId('teams_id_sequence');
+      $group_id = $db->lastInsertId('teams_id_seq');
       $s2 = "INSERT INTO user_team (teamid, userid, isAdmin) values (:teamid, :userid, TRUE)";
       $sq2 = $db->prepare($s2);
       $sq2->bindvalue(':teamid', $group_id, PDO::PARAM_INT);
