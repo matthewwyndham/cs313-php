@@ -67,6 +67,13 @@
                 </div>
 -->
                 <?php if(isset($username)) {
+    echo '<h1>Create a group</h1>';
+    echo '<form action="create_group.php" method="POST">
+          <div class="form-group">
+          <label for="new_group">Group Name</label>
+          <input name="new_group" type="text" class="form-control" id="new_group" placeholder="New Group">
+          <button type="submit" class="btn btn-primary">Create</button>
+          <hr/>';
                 echo '<p class="lead">Select your team:</p>
                 <form action="groups.php" method="POST">
                     <select name="team_choice">';

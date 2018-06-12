@@ -69,8 +69,8 @@
                                             <input name="privilege" type="radio" id="p_admin" value="p_admin">
                                             <label for="p_admin">Admin</label>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Post</button>
-                                    </form>';
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </form><hr/>';
                             }
                         } 
                 ?>
