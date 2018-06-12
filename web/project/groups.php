@@ -57,7 +57,7 @@
         <main>
             
             <div id="topmenu" class="jumbotron">
-                <h1>Groups</h1>
+                
 <!--
                 <p class="lead">Create a new team:</p>
                 <div class="container">
@@ -72,9 +72,9 @@
           <div class="form-group">
           <label for="new_group">Group Name</label>
           <input name="new_group" type="text" class="form-control" id="new_group" placeholder="New Group">
-          <button type="submit" class="btn btn-primary">Create</button>
+          <button type="submit" class="btn btn-primary">Create</button></form>
           <hr/>';
-                echo '<p class="lead">Select your team:</p>
+                echo '<h1>Groups</h1><p class="lead">Select your team:</p>
                 <form action="groups.php" method="GET">
                     <select name="team_choice">';
                         
@@ -86,7 +86,7 @@
                         }
                         
                     echo '</select>
-                    <input type="submit" value="change_team" class="btn btn-primary">
+                    <input type="submit" value="Change team" class="btn btn-primary">
                 </form>';
 } else {
     echo '<p>You must login</p>';
